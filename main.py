@@ -36,7 +36,7 @@ for article_data in articles_data:
 
     if article.template in articles.keys():
         raise KeyError(f"Two articles linking to the same template ({article.template})")
-    
+
     articles[article.template] = article
     category_list.append(article)
     categories[category_name] = category_list
@@ -49,10 +49,12 @@ for article_data in articles_data:
 @app.route("/")
 @app.route("/p")
 def index():
+    """Homepage"""
     return render_template("home.html", categories=categories.items())
 
 @app.route("/rss")
 def rss_feed():
+    """RSS feed"""
     pretty = request.args.get("pretty", False, type=bool)
     response = make_response(fg.rss_str(pretty=pretty), 200)
     response.mimetype = "application/xml"
@@ -60,6 +62,7 @@ def rss_feed():
 
 @app.route("/atom")
 def atom_feed():
+    """Atom feed"""
     pretty = request.args.get("pretty", False, type=bool)
     response = make_response(fg.atom_str(pretty=pretty), 200)
     response.mimetype = "application/xml"
@@ -71,10 +74,12 @@ def favicon():
 
 @app.route("/contact")
 def contact():
+    """Contact page"""
     return render_template("contact.html")
 
 @app.route("/p/<article_id>/")
 def article(article_id:str):
+    """Render an article"""
     if not re.match(r'[a-zA-Z0-9-]+', article_id):
         return ">:("
     article = articles[article_id]
