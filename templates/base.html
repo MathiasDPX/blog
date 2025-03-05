@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}" />
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <div id="wrap">
+        <div id="head">
+            <header>
+                <h1>Mathias</h1>
+            </header>
+            <nav id="navbar">
+                <a href="/rss">rss</a>
+                <a href="{{ url_for('contact') }}">contact</a>
+                <a href="/">home</a>
+            </nav>
+        </div>
+        <main id="main">
+            <article>
+                {% block content %}{% endblock %}
+            </article>
+        </main>
+
+        <footer id="footer">
+            <div id="footer-title">0x03</div>
+            <p>
+                © Mathias DUPEUX<br>
+                <i><b>very</b></i> inspired by <a href="https://jvns.ca" target="_blank">jvns.ca</a><br>
+                Opensource at <a href="https://github.com/MathiasDPX/blog" target="_blank">MathiasDPX/blog</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

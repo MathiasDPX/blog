@@ -1,0 +1,71 @@
+@import url("typography.css");
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Layout */
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    background-image: url("https://jvns.ca/stylesheets/noise.png");
+    background-color: #234892;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main Container */
+#wrap {
+    width: 70%;
+    max-width: 45em;
+    margin: 0 auto;
+    background-color: #fff;
+    flex: 1;
+}
+
+/* Header Styles */
+header {
+    padding-left: 35px;
+    padding-right: 35px;
+    min-height: 130px;
+    position: relative;
+}
+
+header h1 {
+    font-size: 100px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+/* Navigation Bar */
+#navbar {
+    min-width: 100%;
+    background-color: #03396C;
+    padding: 5px 3em 5px 0;
+    text-align: right;
+    width: 70%;
+    max-width: 45em;
+    margin: 0 auto;
+}
+
+/* Main Content */
+#main {
+    padding: 35px;
+}
+
+/* Footer */
+#footer {
+    padding-bottom: 0.5em;
+}
+
+#footer-title {
+    min-width: 100%;
+    background-color: #03396C;
+    text-align: center;
+}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Home</title>
+<style>
+ul {
+    list-style-type: none;
+}
+li {
+    padding-left: 1.5em;
+    padding-bottom: 0.2em;
+}
+h3 {
+    padding-bottom: 0.1em;
+}
+a {
+    color: inherit;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+👋, Welcome here, you can see it's a mess
+
+<br />
+<br />
+
+{% for category_name, articles in categories %}
+    <h3>{{ category_name }}</h3>
+    <ul>
+    {% for article in articles %}
+        <li><a href="{{ url_for('article', article_id=article.template) }}">{{article.title}}</a></li>
+    {% endfor %}
+    </ul>
+{% endfor %}
+
+{% endblock %}
