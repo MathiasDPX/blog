@@ -72,7 +72,7 @@ header h1 {
 }
 @media (max-width: 768px) {
     html, body {
-        min-height: 100vh;
+        min-height: 100dvh;
     }
     #wrap {
         width: 100%;
@@ -83,7 +83,7 @@ header h1 {
     }
 
     header h1 {
-        font-size: clamp(2rem, 20vw, 100px);
+        font-size: clamp(2rem, 20dvw, 100px);
         text-align: center;
         max-width: 90%;
         word-wrap: break-word;
