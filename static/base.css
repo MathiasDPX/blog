@@ -13,7 +13,7 @@ html, body {
 }
 
 body {
-    background-image: url("https://jvns.ca/stylesheets/noise.png");
+    background-image: url("noise.png");
     background-color: #234892;
     display: flex;
     flex-direction: column;
