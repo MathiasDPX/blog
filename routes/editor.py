@@ -1,5 +1,6 @@
 """Used for editor/editor's preview"""
 
+import os
 import base64
 from flask import Blueprint, request, render_template
 
@@ -7,7 +8,7 @@ editor_routes = Blueprint('simple_page', __name__, template_folder='templates')
 
 @editor_routes.route("/editor")
 def editor():
-    return render_template("editor/editor.html")
+    return render_template("editor/editor.html", hostname=os.getenv("URL"))
 
 @editor_routes.route("/preview/<b64>")
 @editor_routes.route("/preview/")
