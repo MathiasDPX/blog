@@ -1,3 +1,6 @@
+templates/articles/
+!templates/articles/loremipsum.html
+
 .env
 
 __pycache__
