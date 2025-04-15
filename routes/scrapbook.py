@@ -38,14 +38,6 @@ def convert_slack_references(text):
     
     result = re.sub(channel_pattern, channel_replacement, text)
 
-    url_pattern = r'<(https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*))>'
-
-    def url_replacement(match):
-        url = match.group(1)
-        return f'<a target="_blank" href="{url}">{url}</a>'
-
-    result = re.sub(url_pattern, url_replacement, text)
-
     return result
 
 @sp_routes.route("/scrapbook")
