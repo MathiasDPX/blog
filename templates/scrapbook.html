@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Scrapbook</title>
+{% endblock %}
+
+
+{% block content %}
+<h1>Scrapook posts</h1>
+<i><h6>
+    <a href="https://scrapbook.hackclub.com/mathias" style="color: #005B96;">See on scrapbook</a>
+</h6></i>
+<br>
+
+{% for post in posts%}
+{% if loop.first %}
+<details id="{{ post.id }}" open>
+{% else%}
+<details id="{{ post.id }}">
+{% endif %}
+    <summary>{{ post.postedAt | formatDate }}</summary>
+    <div>{{ post.text | formatContent |safe }}</div>
+</details>
+{% endfor %}
+
+{% endblock %}

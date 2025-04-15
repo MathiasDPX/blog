@@ -5,17 +5,20 @@ from flask import Flask, render_template, request, send_file, make_response
 from feedgen.feed import FeedGenerator
 from dotenv import load_dotenv
 from routes.editor import editor_routes
+from routes.scrapbook import sp_routes
 from classes import *
 load_dotenv()
 
 app = Flask(__name__)
 app.register_blueprint(editor_routes)
+app.register_blueprint(sp_routes)
 
 with open("articles.json", "r", encoding="utf-8") as f:
     articles_data = json.load(f)
 categories = {} # Category name:str -> [Article]
 articles = {} # ID:str = Article
 
+# RSS Feed
 fg = FeedGenerator()
 fg.title("Mathias")
 fg.id("Mathias")
@@ -24,6 +27,7 @@ fg.language("en")
 fg.link(href=os.getenv("URL"))
 fg.description("Blog RSS feed")
 
+# Register articles
 for article_data in articles_data:
     category_name = article_data.get("category", "Uncategorized")
     category_list = categories.get(category_name, [])
@@ -86,4 +90,4 @@ def article(article_id:str):
     return render_template(f"articles/{article.template}.html")
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

@@ -19,11 +19,11 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 }
 
 /* Heading Hover Effects */
-h2 a:hover::before, 
-h3 a:hover::before, 
-h4 a:hover::before, 
-h5 a:hover::before, 
-h6 a:hover::before {
+h2.chapter a:hover::before, 
+h3.chapter a:hover::before, 
+h4.chapter a:hover::before, 
+h5.chapter a:hover::before, 
+h6.chapter a:hover::before {
     content: "#";
     position: absolute;
     left: -0.75em;
@@ -40,6 +40,21 @@ time {
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
     font-size: 75%;
+}
+
+#main details div {
+    padding-left: 1em;
+    line-height: 115%;
+}
+
+#main details:open {
+    padding-bottom: 1em;
+}
+
+#main details summary {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    padding-bottom: 0.25em;
 }
 
 hr {
