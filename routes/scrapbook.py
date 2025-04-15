@@ -49,8 +49,6 @@ def scrapbook():
             r = requests.get("https://scrapbook.hackclub.com/api/users/mathias")
             data = r.json()
             scrapbookPosts = data["posts"]
-            scrapbookPosts.extend(scrapbookPosts)
-            scrapbookPosts.extend(scrapbookPosts)
             lastScrapbookUpdate = time.time()
         except: pass
 
