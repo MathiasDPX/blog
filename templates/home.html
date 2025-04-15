@@ -13,18 +13,15 @@ li {
 h3 {
     padding-bottom: 0.1em;
 }
-a {
-    color: inherit;
-}
 </style>
 {% endblock %}
 
 {% block content %}
-👋, Welcome here, you can see it's a mess
+👋, Welcome here, you can see it's a mess.
+My scrapbook posts are available at <a href="/scrapbook">/scrapbook</a>
 
 <br />
 <br />
-
 {% for category_name, articles in categories %}
     <h3>{{ category_name }}</h3>
     <ul>
