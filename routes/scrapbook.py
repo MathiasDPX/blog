@@ -34,7 +34,7 @@ def convert_slack_references(text):
     def channel_replacement(match):
         channel_id = match.group(1)
         channel_name = channels_maps.get(channel_id, channel_id)
-        return f'<a href="https://hackclub.slack.com/archives/{channel_id}">#{channel_name}</a>'
+        return f'<a target="_blank" href="https://hackclub.slack.com/archives/{channel_id}">#{channel_name}</a>'
     
     result = re.sub(channel_pattern, channel_replacement, text)
     
