@@ -18,7 +18,7 @@
 {% else%}
 <details id="{{ post.id }}">
 {% endif %}
-    <summary>{{ post.postedAt | formatDate }}</summary>
+    <summary>{{ moment(post.postedAt).format('DD/MM/YYYY @ HH[h]mm') }}</summary>
     <div>{{ post.text | formatContent |safe }}</div>
 </details>
 {% endfor %}

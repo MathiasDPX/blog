@@ -36,6 +36,10 @@ h6.chapter a:hover::before {
     margin-bottom: 0.75em;
 }
 
+summary > small {
+    font-size: 0.5em;
+}
+
 time {
     font-family: "Montserrat", sans-serif;
     font-weight: bold;

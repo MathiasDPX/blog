@@ -3,6 +3,7 @@ import re
 import os
 from flask import Flask, render_template, request, send_file, make_response
 from feedgen.feed import FeedGenerator
+from flask_moment import Moment
 from dotenv import load_dotenv
 from routes.editor import editor_routes
 from routes.scrapbook import sp_routes
@@ -10,6 +11,8 @@ from classes import *
 load_dotenv()
 
 app = Flask(__name__)
+moment = Moment(app)
+
 app.register_blueprint(editor_routes)
 app.register_blueprint(sp_routes)
 
