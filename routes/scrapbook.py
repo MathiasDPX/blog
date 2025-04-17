@@ -36,8 +36,14 @@ def convert_slack_references(text):
         channel_name = channels_maps.get(channel_id, channel_id)
         return f'<a target="_blank" href="htps://hackclub.slack.com/archives/{channel_id}">#{channel_name}</a>'
     
-    result = re.sub(channel_pattern, channel_replacement, text)
+    url_pattern = r'<(http(?:|s):\/\/[a-zA-Z0-9\.\/_-]+)>'
+    def url_replacement(match):
+        url = match.group(1)
+        return f'<a target="_blank" href="{url}">{url}</a>'
 
+    result = re.sub(url_pattern, url_replacement, text)
+    result = re.sub(channel_pattern, channel_replacement, result)
+    
     return result
 
 @sp_routes.route("/scrapbook")
