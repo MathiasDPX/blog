@@ -2,6 +2,15 @@
 
 {% block head %}
 <title>Scrapbook</title>
+
+<style>
+img, video {
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
 {% endblock %}
 
 
@@ -20,6 +29,19 @@
 {% endif %}
     <summary>{{ moment(post.postedAt).format('DD/MM/YYYY @ HH[h]mm') }}</summary>
     <div>{{ post.text | formatContent |safe }}</div>
+    {% for attachment in post.attachments %}
+        <br>
+        {% if attachment.endswith(('.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg', '.bmp')) %}
+            <img src="{{ attachment }}" alt="Image">
+        {% elif attachment.endswith(('.mp4', '.webm', '.ogg', '.mov', '.avi')) %}
+            <video controls>
+            <source src="{{ attachment }}" type="video/{{ attachment.split('.')[-1] }}">
+            Your browser does not support the video tag.
+            </video>
+        {% else %}
+            <p>URL does not appear to be an image or video: {{ attachment }}</p>
+        {% endif %}
+    {% endfor %}
 </details>
 {% endfor %}
 
