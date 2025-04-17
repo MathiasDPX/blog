@@ -57,6 +57,7 @@ time {
 }
 
 #main details summary {
+    cursor: pointer;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     padding-bottom: 0.25em;
