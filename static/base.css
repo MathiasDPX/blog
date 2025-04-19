@@ -110,6 +110,10 @@ a:hover {
     text-decoration: underline;
 }
 
+nav a:hover {
+    text-decoration: none;
+}
+
 a {
     text-decoration: none;
     color: #005B96;
