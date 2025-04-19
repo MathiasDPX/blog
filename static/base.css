@@ -1,6 +1,5 @@
 @import url("typography.css");
 
-
 /* Reset */
 * {
     margin: 0;
@@ -52,6 +51,13 @@ header h1 {
     background-color: #03396C;
     padding: 5px 3em 5px 0;
     text-align: right;
+    min-width: 100%;
+    color: #ffffff;
+}
+
+#navbar a + a::before {
+    content: "// ";
+    padding: 0 0.1em;
 }
 
 /* Main Content */
@@ -60,25 +66,67 @@ header h1 {
     flex: 1;
 }
 
+#main details div {
+    padding-left: 1em;
+    line-height: 115%;
+}
+
+#main details:open {
+    padding-bottom: 1em;
+}
+
+#main details summary {
+    cursor: pointer;
+    padding-bottom: 0.25em;
+}
+
 /* Footer */
 #footer {
     margin-top: auto;
+    text-align: center;
 }
+
 #footer-title {
     width: 100%;
+    min-width: 100%;
     background-color: #03396C;
+    color: #ffffff;
     text-align: center;
     padding: 0.5em 0;
 }
+
+#footer p {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    line-height: 1.25;
+}
+
+hr {
+    margin-bottom: 1em;
+}
+
+/* Links */
+a:hover {
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: none;
+    color: #005B96;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
     html, body {
         min-height: 100dvh;
     }
+    
     #wrap {
         width: 100%;
         max-width: none;
     }
-    footer p{
+    
+    footer p {
         margin-bottom: 0.25em;
     }
 

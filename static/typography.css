@@ -47,40 +47,13 @@ time {
     font-size: 75%;
 }
 
-#main details div {
-    padding-left: 1em;
-    line-height: 115%;
-}
-
-#main details:open {
-    padding-bottom: 1em;
-}
-
 #main details summary {
-    cursor: pointer;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    padding-bottom: 0.25em;
-}
-
-hr {
-    margin-bottom: 1em;
-}
-
-/* Links */
-a:hover {
-    text-decoration: underline;
-}
-
-a {
-    text-decoration: none;
-    color: #005B96;
 }
 
 /* Navigation */
 #navbar {
-    min-width: 100%;
-    color: #ffffff;
     text-transform: uppercase;
     font-family: "Montserrat", sans-serif;
 }
@@ -89,25 +62,7 @@ a {
     color: inherit;
 }
 
-#navbar a + a::before {
-    content: "// ";
-    padding: 0 0.1em;
-}
-
 /* Footer */
 #footer-title {
-    padding: 5px 0;
-    min-width: 100%;
-    color: #ffffff;
     font-family: "Montserrat", sans-serif;
-}
-
-#footer {
-    text-align: center;
-}
-
-#footer p {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    line-height: 1.25;
 }
